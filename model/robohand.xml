@@ -1,0 +1,222 @@
+<mujoco>
+  <compiler angle="degree"/>
+  <option  gravity="0 0 0" timestep="0.001"/>
+
+  <worldbody>
+    <light pos="0 0 100"/>
+    <geom type="plane" size="50 50 0.1" pos="0 0 0" rgba="0.53 0.81 0.92 1"/>
+
+    <body name="base" pos="0 0 2">
+      
+      <site name="jointf01_site" pos="0 0 0.1"/>
+      <site name="jointf02_site" pos="0.08 0 0.1"/>
+      <site name="jointf03_site" pos="0.16 0 0.1"/>
+      <site name="jointf04_site" pos="0.24 0 0.1"/>
+      <site name="jointf05_site" pos="0.32 0 0.1"/>
+
+      <geom name="jointf01" type="sphere" size="0.05" pos="0 0 0.1" rgba="0.72 0.68 0.64 1"/>
+      <geom name="jointf02" type="sphere" size="0.05" pos="0.08 0 0.1" rgba="0.72 0.68 0.64 1"/>
+      <geom name="jointf03" type="sphere" size="0.05" pos="0.16 0 0.1" rgba="0.72 0.68 0.64 1"/>
+      <geom name="jointf04" type="sphere" size="0.05" pos="0.24 0 0.1" rgba="0.72 0.68 0.64 1"/>
+      <geom name="jointf05" type="sphere" size="0.05" pos="0.32 0 0.1" rgba="0.72 0.68 0.64 1"/>
+
+      <geom name="jointf07" type="box" size="0.3 0.07 0.33" pos="0.13 0 0.5" rgba="0.91 0.89 0.86 0.7" solref="0.02 2"/>
+            <site name="hand_touch" size="0.05" rgba="0.91 0.89 0.86 0.2" pos=" 0.13 -0.07 0.5"/>
+
+            
+      <body name="finger1_part1">
+        <joint name="jointf11" type="hinge" axis="1 0 0" pos="-0.2 0 0.9" range="0 90" damping="0.5"/>
+        <site name="jointf11_site" pos="-0.2 0 0.9"/>
+        <geom name="jointf11_type" type="sphere" size="0.075" pos="-0.2 0 0.9" rgba="0.72 0.68 0.64 1"/>
+        <geom name="bonef11" type="capsule" size="0.075" fromto="-0.2 0 0.95 -0.2 0 1.225" rgba="0.91 0.89 0.86 1"/>
+
+        <body name="finger1_part2">
+          <joint name="jointf12" type="hinge" axis="1 0 0" pos="-0.2 0 1.3" range="0 90" damping="0.3"/>
+          <site name="jointf12_site" pos="-0.2 0 1.3"/>
+          <geom name="jointf12_type" type="sphere" size="0.065" pos="-0.2 0 1.3" rgba="0.72 0.68 0.64 1"/>
+          <geom name="bonef12" type="capsule" size="0.065" fromto="-0.2 0 1.365 -0.2 0 1.4825" rgba="0.91 0.89 0.86 1"/>
+
+          <body name="finger1_part3">
+            <joint name="jointf13" type="hinge" axis="1 0 0" pos="-0.2 0 1.55" range="0 90" damping="0.2"/>
+            <site name="jointf13_site" pos="-0.2 0 1.55"/>
+            <geom name="jointf13_type" type="sphere" size="0.055" pos="-0.2 0 1.55" rgba="0.72 0.68 0.64 1"/>
+            <geom name="bonef13" type="capsule" size="0.055" fromto="-0.2 0 1.605 -0.2 0 1.725" rgba="0.91 0.89 0.86 1"/>
+          </body>
+        </body>
+      </body>
+
+
+      <body name="finger2_part1">
+        <joint name="jointf21" type="hinge" axis="1 0 0" pos="0.05 0 0.95" range="0 90"/>    
+        <site name="jointf21_site" pos="0.05 0 0.95"/>
+        <geom name="jointf21_type" type="sphere" size="0.085" pos="0.05 0 0.95" rgba="0.72 0.68 0.64 1"/>
+        <geom name="bonef21" type="capsule" size="0.085" fromto="0.05 0.0 1 0.05 0.0 1.4" rgba="0.91 0.89 0.86 1"/>
+
+        <body name="finger2_part2">
+          <joint name="jointf22" type="hinge" axis="1 0 0" pos="0.05 0.0 1.4549999999999998" range="0 90" />
+          <site name="jointf22_site" pos="0.05 0.0 1.4549999999999998"/>
+          <geom name="jointf22_type" type="sphere" size="0.075" pos="0.05 0.0 1.454999999999999" rgba="0.72 0.68 0.64 1"/>
+          <geom name="bonef22" type="capsule" size="0.075" fromto="0.05 0.0 1.5299999999999998 0.05 0.0 1.8" rgba="0.91 0.89 0.86 1"/>
+
+          <body name="finger2_part3">
+            <joint name="jointf23" type="hinge" axis="1 0 0" pos="0.05 0.0 1.8299999999999998" range="0 90" />
+            <site name="jointf23_site" pos="0.05 0.0 1.8299999999999998"/>
+            <geom name="jointf23_type" type="sphere" size="0.065" pos="0.05 0.0 1.8299999999999998" rgba="0.72 0.68 0.64 1"/>
+            <geom name="bonef23" type="capsule" size="0.065" fromto="0.05 0.0 1.8949999999999998 0.05 0.0 2.05" rgba="0.91 0.89 0.86 1"/>
+          </body>
+        </body>
+      </body>
+
+
+      <body name="finger3_part1">
+        <joint name="jointf31" type="hinge" axis="1 0 0" pos="0.3 0 0.95" range="0 90"/>     
+        <site name="jointf31_site" pos="0.3 0 0.95"/>
+        <geom name="jointf31_type" type="sphere" size="0.075" pos="0.3 0 0.95" rgba="0.72 0.68 0.64 1"/>
+        <geom name="bonef31" type="capsule" size="0.075" fromto="0.3 0.0 1 0.3 0.0 1.27" rgba="0.91 0.89 0.86 1"/>
+
+        <body name="finger3_part2">
+          <joint name="jointf32" type="hinge" axis="1 0 0" pos="0.3 0.0 1.325" range="0 90" />
+          <site name="jointf32_site" pos="0.3 0.0 1.325"/>
+          <geom name="jointf32_type" type="sphere" size="0.065" pos="0.3 0.0 1.325" rgba="0.72 0.68 0.64 1"/>
+          <geom name="bonef32" type="capsule" size="0.065" fromto="0.3 0.0 1.39 0.3 0.0 1.6" rgba="0.91 0.89 0.86 1"/>
+
+          <body name="finger3_part3">
+            <joint name="jointf33" type="hinge" axis="1 0 0" pos="0.3 0.0 1.64" range="0 90" />
+            <site name="jointf33_site" pos="0.3 0.0 1.64"/>
+            <geom name="jointf33_type" type="sphere" size="0.055" pos="0.3 0.0 1.64" rgba="0.72 0.68 0.64 1"/>
+            <geom name="bonef33" type="capsule" size="0.055" fromto="0.3 0.0 1.68 0.3 0.0 1.87" rgba="0.91 0.89 0.86 1"/>
+          </body>
+        </body>
+      </body>
+
+
+      <body name="finger4_part1">
+        <joint name="jointf41" type="hinge" axis="1 0 0" pos="0.5 0 0.85" range="0 90"/>       
+        <site name="jointf41_site" pos="0.5 0 0.85"/>
+        <geom name="jointf41_type" type="sphere" size="0.065" pos="0.5 0 0.85" rgba="0.72 0.68 0.64 1"/>
+        <geom name="bonef41" type="capsule" size="0.065" fromto="0.5 0.0 0.9 0.5 0.0 1.22" rgba="0.91 0.89 0.86 1"/>
+
+        <body name="finger4_part2">
+          <joint name="jointf42" type="hinge" axis="1 0 0" pos="0.5 0.0 1.265" range="0 90" />
+          <site name="jointf42_site" pos="0.5 0.0 1.265"/>
+          <geom name="jointf42_type" type="sphere" size="0.055" pos="0.5 0.0 1.265" rgba="0.72 0.68 0.64 1"/>
+          <geom name="bonef42" type="capsule" size="0.055" fromto="0.5 0.0 1.3 0.5 0.0 1.46" rgba="0.91 0.89 0.86 1"/>
+
+          <body name="finger4_part3">
+            <joint name="jointf43" type="hinge" axis="1 0 0" pos="0.5 0.0 1.5199999999999998" range="0 90" />
+            <site name="jointf43_site" pos="0.5 0.0 1.5199999999999998"/>
+            <site name="jointf4_tip" pos="0.5 0.0 1.7" size="0.01" />            
+            <geom name="jointf43_type" type="sphere" size="0.045" pos="0.5 0.0 1.5" rgba="0.72 0.68 0.64 1"/>
+            <geom name="bonef43" type="capsule" size="0.045" fromto="0.5 0.0 1.55 0.5 0.0 1.7" rgba="0.91 0.89 0.86 1"/>
+          </body>
+        </body>
+      </body>
+
+      <body name="finger5_part1">
+        <joint name="jointf51" type="hinge" axis="0 0 1" pos="-0.3 0 0.45" range="0 90"/>
+        <site name="jointf51_site" pos="-0.3 0 0.45"/>
+        <geom name="jointf51_type" type="sphere" size="0.09" pos="-0.3 0 0.45" rgba="0.72 0.68 0.64 1"/>
+        <geom name="bonef51" type="capsule" size="0.09" fromto="-0.305 0.0 0.45 -0.56 0.0 0.45" rgba="0.91 0.89 0.86 1"/>
+
+        <body name="finger5_part2">
+          <joint name="jointf52" type="hinge" axis="0 0 1" pos="-0.63 0 0.45" range="0 90"/>
+          <site name="jointf52_site" pos="-0.63 0 0.45"/>
+          <site name="f5_tip" size="0.02" pos="-0.75 -0.1 0.45" rgba="0.91 0.89 0.86 0.2"/>
+          <geom name="jointf52_type" type="sphere" size="0.09" pos="-0.63 0 0.45" rgba="0.72 0.68 0.64 1"/>
+          <geom name="bonef52" type="capsule" size="0.09" fromto="-0.65 0 0.45 -0.82 0.0 0.45" rgba="0.91 0.89 0.86 1"/>
+        </body>
+      </body>
+    </body>
+<body name="ball">
+        <joint name="ball_joint" type="slide" axis="0 1 0" range="0 180"/>
+        <site name="ball_site" pos="-0.3 0 0.45"/>
+        <geom name="ball" type="sphere" size="0.3" pos="0.13 -2 2.5" rgba="0 0 1 1" solref="0.02 2"/>
+</body>  
+  </worldbody>
+
+  <tendon>
+    <fixed name="tendon_flex">
+      <joint joint="jointf11" coef="1"/>
+      <joint joint="jointf12" coef="0.5"/>
+      <joint joint="jointf13" coef="0.2"/>
+
+      <joint joint="jointf21" coef="1"/>
+      <joint joint="jointf22" coef="0.3"/>
+      <joint joint="jointf23" coef="0.1"/>
+
+      <joint joint="jointf31" coef="1"/>
+      <joint joint="jointf32" coef="0.5"/>
+      <joint joint="jointf33" coef="0.3"/>
+
+      <joint joint="jointf41" coef="1"/>
+      <joint joint="jointf42" coef="0.5"/>
+      <joint joint="jointf43" coef="0.3"/>
+
+      <joint joint="jointf51" coef="1"/>
+      <joint joint="jointf52" coef="0.2"/>
+    </fixed>
+
+    <spatial name="bones" stiffness="0" width="0.01">
+      <site site="jointf51_site"/>
+      <site site="jointf11_site"/>
+      <site site="jointf21_site"/>
+      <site site="jointf31_site"/>
+      <site site="jointf41_site"/>
+    </spatial>
+
+    <spatial name="bones_05" stiffness="0" width="0.03" rgba="0.72 0.68 0.64 1">
+      <site site="jointf01_site"/>
+      <site site="jointf51_site"/>
+    </spatial>
+
+    <spatial name="bones_01" stiffness="0" width="0.03" rgba="0.72 0.68 0.64 1">
+      <site site="jointf02_site"/>
+      <site site="jointf11_site"/>
+    </spatial>
+
+    <spatial name="bones_02" stiffness="0" width="0.03" rgba="0.72 0.68 0.64 1">
+      <site site="jointf03_site"/>
+      <site site="jointf21_site"/>
+    </spatial>
+
+    <spatial name="bones_03" stiffness="0" width="0.03" rgba="0.72 0.68 0.64 1">
+      <site site="jointf04_site"/>
+      <site site="jointf31_site"/>
+    </spatial>
+
+    <spatial name="bones_04" stiffness="0" width="0.03" rgba="0.72 0.68 0.64 1">
+      <site site="jointf05_site"/>
+      <site site="jointf41_site"/>
+    </spatial>
+
+  </tendon>
+
+  <actuator>
+        <motor name="finger11" joint="jointf11" gear="30"/>
+        <motor name="finger21" joint="jointf21" gear="90"/>
+        <motor name="finger31" joint="jointf31" gear="30"/>
+        <motor name="finger41" joint="jointf41" gear="30"/>
+        <motor name="finger51" joint="jointf51" gear="30"/>
+
+        <motor name="finger12" joint="jointf12" gear="7"/>
+        <motor name="finger22" joint="jointf22" gear="15"/>
+        <motor name="finger32" joint="jointf32" gear="7"/>
+        <motor name="finger42" joint="jointf42" gear="7"/>
+        <motor name="finger52" joint="jointf52" gear="5"/>
+
+        <motor name="finger13" joint="jointf13" gear="2"/>
+        <motor name="finger23" joint="jointf23" gear="5"/>
+        <motor name="finger33" joint="jointf33" gear="2"/>
+        <motor name="finger43" joint="jointf43" gear="1"/>
+
+        <motor name="ball_motor" joint="ball_joint" gear="100"/>
+  </actuator>
+
+  <sensor>
+        <touch name="touch_hand" site="hand_touch"/>
+        <touch name="finger1_t" site="jointf12_site"/>
+        <touch name="finger2_t" site="jointf22_site"/>
+        <touch name="finger3_t" site="jointf32_site"/>
+        <touch name="tip_f5" site="f5_tip"/>
+  </sensor>
+</mujoco>
