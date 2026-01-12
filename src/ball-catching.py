@@ -3,7 +3,7 @@ import mujoco
 import mujoco.viewer
 import utils
 
-model = mujoco.MjModel.from_xml_path("It_supposed to be an arm.xml")
+model = mujoco.MjModel.from_xml_path("robohand.xml")
 data = mujoco.MjData(model)
 
 palm_adr = mujoco.mj_name2id(model, mujoco.mjtObj.mjOBJ_SENSOR, "touch_hand")
@@ -69,4 +69,5 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
                     data.ctrl[aid] = 0.0
 
             mujoco.mj_step(model, data) 
+
             viewer.sync()  
