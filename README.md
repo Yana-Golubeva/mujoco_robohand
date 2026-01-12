@@ -15,7 +15,7 @@ This code implements the model of RoboHand to mimic the movements of a human han
 # Model Demo
 <img src="assets/gifs/ball-catching.gif?raw=true&v=2" width="465" />
 </div>
-* GIF animations may require a tap to play on mobile devices. For automatic playback, please use the desktop version.
+*GIF animations may require a tap to play on mobile devices. For automatic playback, please use the desktop version.
 
 # Usage
 ### Instructions:
@@ -31,7 +31,7 @@ To work with this model you have to:
 <br/>
 Now you can change the settings in real-time to see how it works and create your own configurations.
 # Tips
-- Don't forget to **add <freejoint/>** to the body and change the **gravitation options**, if you need to move it
+- Don't forget to add joint type "free" for the base body and change the **gravitation options**, if you need to move it
 - To improve control in complex manipulation systems just **add more sensors to the finger tips**
 ---
 Employ a dual-hand configuration when you need to:
